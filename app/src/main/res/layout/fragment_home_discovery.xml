@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+	              xmlns:tools="http://schemas.android.com/tools"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent"
+	              android:fitsSystemWindows="true"
+	              android:orientation="vertical"
+	              tools:context="com.is90.Reader3.fragment.HomeDiscoveryFragment">
+
+
+		<!--状态栏-->
+		<View
+				android:id="@+id/view_status"
+				android:layout_width="match_parent"
+				android:layout_height="24dp"
+				android:visibility="gone"
+				android:background="@color/colorTheme" />
+
+		<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="@color/colorTheme"
+				app:contentInsetStart="0.0dp"
+				app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+				app:theme="@style/ToolbarStyle">
+			<FrameLayout
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:paddingLeft="15dp"
+					android:layout_gravity="left"
+					android:paddingRight="15dp">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:background="?attr/selectableItemBackgroundBorderless"
+						android:textColor="@color/white"
+						android:textSize="16dp"
+						android:text="发现" />
+			</FrameLayout>
+
+
+			<FrameLayout
+					android:id="@+id/ll_title_search"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:paddingLeft="15dp"
+					android:layout_gravity="right"
+					android:paddingRight="15dp">
+
+				<ImageView
+						android:id="@+id/iv_title_search"
+						android:layout_width="23dp"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:src="@mipmap/actionbar_search" />
+			</FrameLayout>
+		</android.support.v7.widget.Toolbar>
+
+		<android.support.v7.widget.RecyclerView
+				android:id="@+id/xrv_ablums"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center_horizontal"
+				android:scrollbarAlwaysDrawVerticalTrack="true"
+				android:scrollbarFadeDuration="1"
+				android:scrollbarSize="4dp"
+				android:scrollbars="vertical" />
+
+	</LinearLayout>
+</layout>

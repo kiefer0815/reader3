@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+	<data>
+		<import type="android.view.View"/>
+		<variable
+				name="listener"
+				type="com.is90.Reader3.fragment.HomeAccountFragment" />
+
+		<variable
+				name="user"
+				type="com.is90.Reader3.bean.User" />
+	</data>
+
+	<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+	              xmlns:tools="http://schemas.android.com/tools"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent"
+	              android:fitsSystemWindows="true"
+	              android:background="@color/colorPageBg"
+	              android:orientation="vertical"
+	              tools:context="com.is90.Reader3.fragment.HomeAccountFragment">
+
+
+		<!--状态栏-->
+		<View
+				android:id="@+id/view_status"
+				android:layout_width="match_parent"
+				android:layout_height="24dp"
+				android:visibility="gone"
+				android:background="@color/colorTheme" />
+
+		<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="@color/colorTheme"
+				app:contentInsetStart="0.0dp"
+				app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+				app:theme="@style/ToolbarStyle">
+			<FrameLayout
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:paddingLeft="15dp"
+					android:layout_gravity="left"
+					android:paddingRight="15dp">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:background="?attr/selectableItemBackgroundBorderless"
+						android:textColor="@color/white"
+						android:textSize="16dp"
+						android:text="设置" />
+			</FrameLayout>
+
+
+			<FrameLayout
+					android:id="@+id/ll_title_search"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:paddingLeft="15dp"
+					android:layout_gravity="right"
+					android:paddingRight="15dp">
+
+				<ImageView
+						android:id="@+id/iv_title_search"
+						android:layout_width="23dp"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:src="@mipmap/actionbar_search" />
+			</FrameLayout>
+		</android.support.v7.widget.Toolbar>
+		<ScrollView android:layout_width="match_parent"
+		            android:layout_height="match_parent" >
+		<LinearLayout
+				android:id="@+id/ll_content"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+			<LinearLayout
+			              android:id="@+id/ll_header_bg"
+			              android:layout_width="match_parent"
+			              android:layout_height="wrap_content"
+			              android:background="@mipmap/side_bg"
+			              android:gravity="bottom"
+			              android:orientation="vertical"
+			              android:theme="@style/ThemeOverlay.AppCompat.Dark">
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:gravity="bottom"
+						android:orientation="vertical"
+						android:background="#60000000"
+						android:paddingBottom="@dimen/activity_vertical_margin"
+						android:paddingLeft="@dimen/activity_horizontal_margin"
+						android:paddingRight="@dimen/activity_horizontal_margin"
+						android:paddingTop="@dimen/activity_vertical_margin">
+
+					<ImageView
+							android:id="@+id/iv_avatar"
+							android:layout_width="60dp"
+							android:layout_height="60dp"
+							android:layout_gravity="center_horizontal"
+							android:showAvatar="@{user.avatar}"
+							android:scaleType="centerCrop" />
+
+					<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:orientation="horizontal"
+							android:paddingTop="@dimen/nav_header_vertical_spacing">
+
+						<TextView
+								android:id="@+id/tv_username"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:text="@{user.id!=-1?user.name:@string/login}"
+								android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+								android:textColor="@color/colorWhite"
+								android:textSize="17sp" />
+
+
+					</LinearLayout>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@color/colorWhite"
+					android:orientation="vertical">
+
+
+				<LinearLayout
+						android:id="@+id/ll_userbook"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@mipmap/home_title_source" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="导入小说"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+						android:id="@+id/ll_set_lock"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@drawable/ic_nav_login" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="设置锁屏"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+				<LinearLayout
+						android:id="@+id/ll_feedback"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp"
+				android:visibility="gone">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@drawable/ic_nav_deedback" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="意见反馈"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+						android:id="@+id/ll_scan_download"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@drawable/ic_nav_scan" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="下载分享"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+
+
+				<LinearLayout
+						android:id="@+id/ll_use"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@drawable/home_title_qian" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="使用说明"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+
+				<LinearLayout
+						android:id="@+id/ll_about"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@drawable/ic_nav_about" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="关于电子书阅读器"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+
+				<View
+						android:id="@+id/line"
+						android:layout_width="match_parent"
+						android:layout_height="0.3dp"
+						android:background="@color/colorNavLine" />
+
+
+
+
+				<LinearLayout
+						android:id="@+id/ll_exit"
+						android:layout_width="match_parent"
+						android:layout_height="48dp"
+						android:clickable="true"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="16dp"
+						android:paddingRight="16dp"
+						android:visibility="@{user.id!=-1? View.VISIBLE : View.GONE}">
+
+					<ImageView
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:src="@drawable/ic_nav_exit" />
+
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="16dp"
+							android:text="退出应用"
+							android:textColor="@color/colorContent"
+							android:textSize="15sp" />
+
+				</LinearLayout>
+
+
+			</LinearLayout>
+
+
+		</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</layout>

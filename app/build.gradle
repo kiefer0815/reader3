@@ -1,0 +1,166 @@
+apply plugin: 'com.android.application'
+
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+    aaptOptions.useNewCruncher = false
+
+
+    lintOptions {
+        abortOnError false
+        disable "MissingTranslation"
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+        applicationId "com.is90.Reader3"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 200006
+        versionName "2.0.6"
+        // Enabling multidex support,65535的限制
+        multiDexEnabled true
+        // 默认是umeng的渠道
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
+        resConfigs "zh"
+    }
+
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            try {
+                storeFile file("../uhmtech.jks")
+                storePassword KEYSTORE_PASSWORD
+                keyAlias "uhmtechKey"
+                keyPassword KEY_PASSWORD
+            } catch (ex) {
+                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            }
+        }
+    }
+    applicationVariants.all { variant ->
+
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                // 输出apk名称为ruoshui_v1.0_2015-04-15_xiaomi.apk
+                def fileName = "uhmtech_v${variant.versionName}_${releaseTime()}_${variant.productFlavors[0].name}_${variant.buildType.name}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+//            minifyEnabled true
+//            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    productFlavors {
+        official {}
+//        dev {}
+
+//        tuiguang{}
+//        google{}
+//        wandoujia {}
+
+//        meizu {}
+
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    useLibrary 'org.apache.http.legacy'
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+//        exclude 'lib/armeabi-v7a/libjlibtorrent.so'
+//        exclude 'lib/x86/libjlibtorrent.so'
+//        exclude 'lib/x86_64/libjlibtorrent.so'
+//        exclude 'lib/arm64-v8a/libjlibtorrent.so'
+    }
+    dataBinding {
+        enabled = true;
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
+    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.android.support:multidex:1.0.1'
+
+    // retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.squareup.okhttp:logging-interceptor:2.6.0'
+    //rx java
+    compile 'io.reactivex:rxjava:1.2.0'
+
+    //logger
+    compile 'com.orhanobut:logger:1.8'
+
+    compile 'com.liulishuo.filedownloader:library:1.5.5'
+
+    compile 'com.alibaba:fastjson:1.1.58.android'
+
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+
+    compile 'devlight.io:navigationtabbar:1.2.5'
+
+    compile 'com.pingxx:pingpp-core:2.1.9' //必须添加
+    compile 'com.pingxx:pingpp-alipay:2.1.9' //使用支付宝时添加
+    compile 'com.pingxx:pingpp-wxpay:2.1.9' //使用微信支付时添加
+    compile 'com.xiaochendev.progressroundbtn:library:2.0.0'
+
+    //锁屏
+    compile 'com.andrognito.patternlockview:patternlockview:1.0.0'
+    //反馈
+
+    compile 'com.youth.banner:banner:1.4.10'
+    compile 'com.google.android.gms:play-services-ads:11.6.0'
+
+}

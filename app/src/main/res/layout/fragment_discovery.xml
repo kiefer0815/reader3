@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent"
+	              android:background="@color/colorPageBg"
+	              android:orientation="vertical">
+		<!--状态栏-->
+		<View
+				android:id="@+id/view_status"
+				android:layout_width="match_parent"
+				android:layout_height="24dp"
+				android:visibility="gone"
+				android:background="@color/colorTheme" />
+		<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="@color/colorTheme"
+				app:contentInsetStart="0.0dp"
+				app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+				app:theme="@style/ToolbarStyle">
+			<FrameLayout
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:paddingLeft="15dp"
+					android:layout_gravity="left"
+					android:paddingRight="15dp">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:background="?attr/selectableItemBackgroundBorderless"
+						android:textColor="@color/white"
+						android:textSize="16dp"
+						android:text="发现" />
+			</FrameLayout>
+
+
+			<FrameLayout
+					android:id="@+id/ll_title_search"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:paddingLeft="15dp"
+					android:layout_gravity="right"
+					android:paddingRight="15dp">
+
+				<ImageView
+						android:id="@+id/iv_title_search"
+						android:layout_width="23dp"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:src="@mipmap/actionbar_search" />
+			</FrameLayout>
+		</android.support.v7.widget.Toolbar>
+
+		<com.youth.banner.Banner
+				android:id="@+id/banner"
+				android:layout_width="match_parent"
+				android:layout_height="230dp"
+				android:background="@color/colorPageBg"
+				app:image_scale_type="center_crop"
+				app:indicator_drawable_selected="@drawable/banner_red"
+				app:indicator_drawable_unselected="@drawable/banner_grey"
+				app:indicator_height="9dp"
+				app:indicator_margin="3dp"
+				app:indicator_width="9dp"
+				app:is_auto_play="true" />
+
+		<include
+				android:id="@+id/include_everyday"
+				layout="@layout/discovery_mid_layout" />
+
+	</LinearLayout>
+</layout>

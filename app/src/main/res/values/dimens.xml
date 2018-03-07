@@ -1,0 +1,50 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">22dp</dimen>
+    <dimen name="app_bar_height">256dp</dimen>
+
+    <!-- 状态栏电池厚度 -->
+    <dimen name="reading_board_battery_border_width">1dp</dimen>
+    <!-- 书本宽边距 -->
+    <dimen name="readingMarginWidth">15dp</dimen>
+    <!-- 书本高边距 -->
+    <dimen name="readingMarginHeight">30dp</dimen>
+    <!-- 状态栏离底部距离 -->
+    <dimen name="reading_status_margin_bottom">3dp</dimen>
+    <!-- 行间距 -->
+    <dimen name="reading_line_spacing">10dp</dimen>
+    <!-- 段间距 -->
+    <dimen name="reading_paragraph_spacing">30dp</dimen>
+    <!-- 书本字体默认大小 -->
+    <dimen name="reading_default_text_size">20sp</dimen>
+    <!-- 书本字体最小大小 -->
+    <dimen name="reading_min_text_size">10sp</dimen>
+    <!-- 书本字体最大大小 -->
+    <dimen name="reading_max_text_size">30sp</dimen>
+    <!-- 设置行高 -->
+    <dimen name="setting_height">60dp</dimen>
+    <!--书籍详情图片的宽高-->
+    <dimen name="book_detail_width">120dp</dimen>
+    <dimen name="book_detail_height">165dp</dimen>
+    <dimen name="albums_height">110dp</dimen>
+    <dimen name="albums_width">110dp</dimen>
+
+    <!--movie详情图片的宽高-->
+    <dimen name="movie_detail_width">165dp</dimen>
+    <dimen name="movie_detail_height">100dp</dimen>
+
+    <!--movie详情图片的宽高-->
+    <dimen name="Rec_detail_width">125dp</dimen>
+    <dimen name="Rec_detail_height">165dp</dimen>
+
+    <dimen name="nav_bar_height">56dp</dimen>
+    <dimen name="nav_bar_height_more">58dp</dimen>
+    <!--渐变时还没到布局全部就已经不透明了，距离 45dp-->
+    <dimen name="base_header_activity_slide_more">45dp</dimen>
+
+</resources>

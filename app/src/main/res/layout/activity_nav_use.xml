@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+	                android:id="@+id/activity_nav_about"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:background="@color/colorPageBg"
+	                android:orientation="horizontal"
+	                android:paddingBottom="@dimen/activity_vertical_margin"
+	                tools:context="com.is90.Reader3.ui.menu.NavUseActivity">
+
+		<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+			<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginTop="10dp"
+				android:lineSpacingExtra="2dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:text="@string/disclaimer_statement_description"
+				android:textColor="@color/colorSubtitle"
+				android:textSize="14sp" />
+			</LinearLayout>
+
+		</ScrollView>
+	</RelativeLayout>
+</layout>

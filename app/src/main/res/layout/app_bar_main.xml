@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:fitsSystemWindows="true"
+                  android:orientation="vertical"
+                  tools:context="com.uhmtech.comics.MainActivity">
+
+
+        <!--状态栏-->
+        <View
+                android:id="@+id/view_status"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:visibility="gone"
+                android:background="@color/colorTheme" />
+
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorTheme"
+                app:contentInsetStart="0.0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ToolbarStyle">
+
+            <FrameLayout
+                    android:id="@+id/ll_title_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                <ImageView
+                        android:id="@+id/iv_title_menu"
+                        android:layout_width="23dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/titlebar_menu" />
+            </FrameLayout>
+
+            <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                <LinearLayout
+                        android:id="@+id/ll_app_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:theme="@style/AppTheme">
+
+                    <TextView
+                            android:id="@+id/iv_title_dou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/app_bar_text_color"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:text="我的电子书" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <FrameLayout android:id="@+id/container"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"/>
+
+            <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    app:srcCompat="@drawable/refresh" />
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

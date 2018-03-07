@@ -1,0 +1,18 @@
+{
+    "code": "0",
+    "error": "ok",
+    "data": [
+        {
+            "api": "/app/book/list",
+            "time": 43200
+        },
+        {
+            "api": "/app/movie/list",
+            "time": 43200
+        },
+        {
+            "api": "/app/config/",
+            "time": 21600
+        }
+    ]
+}

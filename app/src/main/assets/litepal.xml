@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="book" ></dbname>
+
+    <version value="1" ></version>
+
+    <list>
+        <mapping class="com.is90.Reader3.component.db.BookCatalogue"></mapping>
+        <mapping class="com.is90.Reader3.component.db.BookList"></mapping>
+        <mapping class="com.is90.Reader3.component.db.BookMarks"></mapping>
+    </list>
+</litepal>

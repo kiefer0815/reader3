@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+				name="novel"
+				type="com.is90.Reader3.bean.NovelsBean" />
+
+	</data>
+
+	<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+	              android:id="@+id/activity_book_detail"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent"
+	              android:orientation="vertical"
+	              tools:context="com.is90.Reader3.ui.BookDetailActivity">
+
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="5dp"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingTop="10dp">
+
+			<View
+					android:layout_width="2dp"
+					android:layout_height="18dp"
+					android:background="@color/colorTheme" />
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:text="摘要"
+					android:textColor="@color/colorContent"
+					android:textSize="17sp" />
+
+		</LinearLayout>
+
+		<TextView
+				android:id="@+id/tv_book_note"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="12dp"
+				android:maxLines="4"
+				android:ellipsize="end"
+				android:lineSpacingExtra="5dp"
+				android:text="@{novel.intro}"
+				android:textColor="@color/colorTitle" />
+
+		<FrameLayout
+				android:id="@+id/container"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"/>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="5dp"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingTop="10dp">
+
+			<View
+					android:layout_width="2dp"
+					android:layout_height="18dp"
+					android:background="@color/colorTheme" />
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:text="说明"
+					android:textColor="@color/colorContent"
+					android:textSize="17sp" />
+
+		</LinearLayout>
+
+		<TextView
+				android:id="@+id/tv_book_summary"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="12dp"
+				android:lineSpacingExtra="5dp"
+				android:text="@string/noteContent"
+				android:textColor="@color/colorTitle" />
+
+		<com.xiaochen.progressroundbutton.AnimDownloadProgressButton
+				android:id="@+id/anim_btn"
+				android:layout_width="220dp"
+				android:layout_height="45dp"
+				android:layout_marginBottom="20dp"
+				android:layout_gravity="center_horizontal"
+				app:progressbtn_backgroud_color="@color/colorTheme"
+				app:progressbtn_backgroud_second_color="#E0E0E0"
+				app:progressbtn_enable_press="true"/>
+
+
+
+	</LinearLayout>
+</layout>

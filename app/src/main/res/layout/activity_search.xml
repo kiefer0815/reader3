@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:background="@color/colorPageBg"
+	                android:orientation="horizontal"
+	                tools:context="com.is90.Reader3.ui.BookSearchActivity">
+		<LinearLayout
+				android:id="@+id/title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentTop="true"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal">
+
+			<ImageView
+					android:layout_width="22dp"
+					android:layout_height="22dp"
+					android:src="@drawable/home_title_meizi" />
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="2dp"
+					android:gravity="center_vertical"
+					android:text="热门搜索"
+					android:textColor="@color/colorContent"
+					android:textSize="16sp" />
+		</LinearLayout>
+
+		<android.support.v7.widget.RecyclerView
+				android:id="@+id/xrv_book"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_below="@+id/title"
+				android:scrollbarAlwaysDrawVerticalTrack="true"
+				android:scrollbarFadeDuration="1"
+				android:scrollbarSize="4dp"
+				android:scrollbars="vertical" />
+		<RelativeLayout
+				android:id="@+id/rl_read_bottom"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+		>
+		</RelativeLayout>
+	</RelativeLayout>
+</layout>

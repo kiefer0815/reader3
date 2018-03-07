@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/read_dialog_bg"
+    android:padding="10dp"
+    android:layout_gravity="bottom"
+    android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_height"
+            android:orientation="horizontal">
+        <TextView
+                android:id="@+id/tv_autoread"
+                style="@style/setting_dialog_button"
+                android:layout_width="100dp"
+                android:textSize="14sp"
+                android:text="@string/page_mode_autoread" />
+        <LinearLayout
+                android:id="@+id/ll_speed"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_height"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/tv_subtract"
+                    style="@style/setting_dialog_button"
+                    android:layout_weight="1"
+                    android:textSize="30sp"
+                    android:background="@null"
+                    android:textColor="@color/read_dialog_button_select"
+                    android:text="-" />
+            <TextView
+                    android:id="@+id/tv_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:text="15秒" />
+
+            <TextView
+                    android:id="@+id/tv_add"
+                    style="@style/setting_dialog_button"
+                    android:layout_weight="1"
+                    android:textSize="30sp"
+                    android:background="@null"
+                    android:textColor="@color/read_dialog_button_select"
+                    android:text="+" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_height"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_simulation"
+            style="@style/setting_dialog_button"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:text="@string/page_mode_simulation" />
+        <TextView
+            android:id="@+id/tv_cover"
+            style="@style/setting_dialog_button"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:text="@string/page_mode_cover" />
+        <TextView
+            android:id="@+id/tv_slide"
+            style="@style/setting_dialog_button"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:text="@string/page_mode_slide" />
+        <TextView
+            android:id="@+id/tv_none"
+            style="@style/setting_dialog_button"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:text="@string/page_mode_none" />
+    </LinearLayout>
+</LinearLayout>
